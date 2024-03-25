@@ -3,11 +3,8 @@ services:
   caddy:
     image: docker.io/caddy:2.6-alpine
     restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
     volumes:
-      - ./caddy/:/etc/caddy/
+      - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
       - caddynet
 
