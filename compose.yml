@@ -6,8 +6,10 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
-      - caddynet
+      - reverseproxy
+      - caddy1
 
 networks:
-    caddynet:
-      name: caddy
+    reverseproxy:
+      name: reverseproxy
+      external: true
