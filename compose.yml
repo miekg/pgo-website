@@ -13,3 +13,4 @@ networks:
     reverseproxy:
       name: reverseproxy
       external: true
+    caddy2:
