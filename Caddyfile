@@ -4,6 +4,7 @@
 
 :80 {
     file_server {
+        browse
         root /data
     }
 }
