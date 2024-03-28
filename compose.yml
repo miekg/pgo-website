@@ -1,11 +1,14 @@
 services:
   caddy:
-    image: docker.io/caddy:2.6-alpine
+    environment:
+      - SHARE
+      - NETWORK
+    image: docker.io/caddy:2.7-alpine
     restart: unless-stopped
     volumes:
-       - type: bind
-         source: ${SHARE}
-         target: /data
+      - type: bind
+        source: ${SHARE}
+        target: /data
       - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
       - reverseproxy
@@ -17,7 +20,3 @@ networks:
       external: true
     mycaddy:
       name: ${NETWORK}
-
-volumes:
-    myshare:
-      name: ${SHARE}
