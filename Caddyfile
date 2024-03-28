@@ -4,6 +4,6 @@
 
 :80 {
     file_server {
-        root {$SHARE}
+        root /data
     }
 }
