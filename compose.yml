@@ -6,7 +6,7 @@ services:
     image: docker.io/caddy:2.7-alpine
     restart: unless-stopped
     volumes:
-      - type: volume
+      - type: bind
         source: ${SHARE}
         target: /data
       - ./Caddyfile:/etc/caddy/Caddyfile
