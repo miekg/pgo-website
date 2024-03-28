@@ -7,10 +7,11 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
       - reverseproxy
-      - ${NETWORK}
+      - mycaddy
 
 networks:
     reverseproxy:
       name: reverseproxy
       external: true
-    ${NETWORK}:
+    mycaddy:
+      name: ${NETWORK}
